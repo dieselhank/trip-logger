@@ -5,7 +5,7 @@ namespace TripLoggerServices.Models
 {
     public class DistanceDetail
     {
-        public double Distance { get; set; }
+        public double Length { get; set; }
         [JsonConverter(typeof(StringEnumConverter))]
         public Units Units { get; set; }
     }

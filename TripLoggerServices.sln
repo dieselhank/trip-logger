@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripLoggerServices", "src\TripLoggerServices\TripLoggerServices.csproj", "{C7CF615C-0916-4DE5-9009-CB5CB117F84D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripLoggerServices", "src\TripLoggerServices\TripLoggerServices.csproj", "{C7CF615C-0916-4DE5-9009-CB5CB117F84D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B8F098A2-49FF-496D-932A-082B607E21B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4B8AA974-F51F-42EE-9ADD-679284745E0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +22,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C7CF615C-0916-4DE5-9009-CB5CB117F84D} = {B8F098A2-49FF-496D-932A-082B607E21B7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E388702-2924-4E89-93E8-2F228764C40B}
