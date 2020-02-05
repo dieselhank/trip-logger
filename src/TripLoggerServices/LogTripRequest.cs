@@ -25,7 +25,7 @@ namespace TripLoggerServices
         {
             try
             {
-                log.LogInformation("Processing mile log entry request.");
+                log.LogInformation("Processing trip log entry request.");
 
                 // get raw request body
                 var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
@@ -39,7 +39,7 @@ namespace TripLoggerServices
                 // create id
                 var tripId = Guid.NewGuid();
 
-                // create trip cosmosDb model
+                // create trip cosmos db model
                 var entry = new TripEntry
                 {
                     Id = tripId,
@@ -60,7 +60,6 @@ namespace TripLoggerServices
             catch (Exception exception)
             {
                 // most likely errors to occur
-                //  Error communicating with 3rd party service
                 //  Error communicating with Cosmos DB
                 log.LogError(exception, "Error processing request");
                 return new StatusCodeResult(StatusCodes.Status500InternalServerError);
