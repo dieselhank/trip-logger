@@ -1,2 +1,2 @@
-# mile-logger
-Sample app for logging bicycling miles
+# trip-logger
+Sample app for logging bicycling trips

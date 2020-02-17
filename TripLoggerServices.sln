@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B8F098A2-49F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4B8AA974-F51F-42EE-9ADD-679284745E0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripLoggerServicesTests", "tests\TripLoggerServicesTests\TripLoggerServicesTests.csproj", "{D4234B36-F8E3-472D-A464-1330F4DF0618}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,12 +21,17 @@ Global
 		{C7CF615C-0916-4DE5-9009-CB5CB117F84D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7CF615C-0916-4DE5-9009-CB5CB117F84D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7CF615C-0916-4DE5-9009-CB5CB117F84D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4234B36-F8E3-472D-A464-1330F4DF0618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4234B36-F8E3-472D-A464-1330F4DF0618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4234B36-F8E3-472D-A464-1330F4DF0618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4234B36-F8E3-472D-A464-1330F4DF0618}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C7CF615C-0916-4DE5-9009-CB5CB117F84D} = {B8F098A2-49FF-496D-932A-082B607E21B7}
+		{D4234B36-F8E3-472D-A464-1330F4DF0618} = {4B8AA974-F51F-42EE-9ADD-679284745E0A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E388702-2924-4E89-93E8-2F228764C40B}

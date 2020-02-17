@@ -20,7 +20,7 @@ namespace TripLoggerServices
                 databaseName: "TripLog",
                 collectionName: "Trips",
                 CreateIfNotExists = true,
-                ConnectionStringSetting = "CosmosDBConnection")]IAsyncCollector<TripEntry> trips,
+                ConnectionStringSetting = "CosmosDBConnection")]IAsyncCollector<TripEntry> tripCollector,
             ILogger log)
         {
             try
@@ -52,7 +52,7 @@ namespace TripLoggerServices
                 };
 
                 // create in cosmosDb
-                await trips.AddAsync(entry);
+                await tripCollector.AddAsync(entry);
 
                 // return results
                 return new OkObjectResult($"{tripId}");
