@@ -44,7 +44,6 @@ namespace TripLoggerServices
                 {
                     Id = tripId,
                     Date = postRequest.Date,
-                    IsRoundTrip = postRequest.IsRoundTrip,
                     Distance = postRequest.Distance,
                     TripFrom = postRequest.TripFrom,
                     TripTo = postRequest.TripTo,
