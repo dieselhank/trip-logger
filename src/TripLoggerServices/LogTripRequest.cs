@@ -14,21 +14,23 @@ namespace TripLoggerServices
     public static class LogTripRequest
     {
         [FunctionName("LogTripRequest")]
-        public static async Task<IActionResult> Run(
+        public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "trips")] HttpRequest req,
             [CosmosDB(
                 databaseName: "TripLog",
                 collectionName: "Trips",
                 CreateIfNotExists = true,
-                ConnectionStringSetting = "CosmosDBConnection")]IAsyncCollector<TripEntry> tripCollector,
+                ConnectionStringSetting = "CosmosDBConnection")]out TripEntry tripEntry,
             ILogger log)
         {
+            tripEntry = null;
+
             try
             {
                 log.LogInformation("Processing trip log entry request.");
 
                 // get raw request body
-                var requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+                var requestBody = new StreamReader(req.Body).ReadToEnd();
                 var postRequest = JsonConvert.DeserializeObject<TripPost>(requestBody);
 
                 if (string.IsNullOrWhiteSpace(postRequest.TripFrom)) return new BadRequestObjectResult($"{nameof(postRequest.TripFrom)} missing");
@@ -40,7 +42,7 @@ namespace TripLoggerServices
                 var tripId = Guid.NewGuid();
 
                 // create trip cosmos db model
-                var entry = new TripEntry
+                tripEntry = new TripEntry
                 {
                     Id = tripId,
                     Date = postRequest.Date,
@@ -49,9 +51,6 @@ namespace TripLoggerServices
                     TripTo = postRequest.TripTo,
                     Description = postRequest.Description,
                 };
-
-                // create in cosmosDb
-                await tripCollector.AddAsync(entry);
 
                 // return results
                 return new OkObjectResult($"{tripId}");
