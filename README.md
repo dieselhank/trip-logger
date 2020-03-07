@@ -8,8 +8,8 @@ This solution was built using the following.
 
 - Visual Studio Community 2019 (V 16.4.2)
     - With the Azure Development workload
-    - .Net Core 2.1
-    - Azure Functions V2
+    - .Net Core 3
+    - Azure Functions V3
 - Cosmos DB Emulator
 
 ## Running the Solution
