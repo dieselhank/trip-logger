@@ -64,5 +64,35 @@ namespace TripLoggerServicesTests
                 });
             }
         }
+
+        [TestMethod]
+        public async Task Run_TripEntryNotFound_Returns404()
+        {
+            // arrange
+            var tripPut = new TripPut
+            {
+                Date = new DateTime(2020, 1, 1),
+                Description = "Bike Commute",
+                Distance = new DistanceDetail { Length = 5.6, Units = Units.Miles },
+                TripFrom = "Home",
+                TripTo = "SW"
+            };
+            var req = TestFactory.CreateHttpRequest(JsonConvert.SerializeObject(tripPut));
+            var logger = TestFactory.CreateLogger(LoggerTypes.List);
+            var tripId = Guid.NewGuid();
+            TripEntry tripEntry = null;
+
+            // act
+            var result = await UpdateTripRequest.Run(req, tripId.ToString(), tripEntry, logger);
+
+            // assert
+            using (new AssertionScope())
+            {
+                result.Should().BeOfType<NotFoundObjectResult>();
+                var resultBody = (string)((NotFoundObjectResult)result).Value;
+                resultBody.Should().Contain(tripId.ToString());
+                tripEntry.Should().BeNull();
+            }
+        }
     }
 }
