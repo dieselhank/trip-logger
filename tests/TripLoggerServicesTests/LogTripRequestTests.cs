@@ -10,7 +10,7 @@ using TripLoggerServicesTests.Helpers;
 namespace TripLoggerServicesTests
 {
     [TestClass]
-    public class LogTripRequestTest
+    public class LogTripRequestTests
     {
         [TestMethod]
         public void Run_WithValidRequest_ReturnsIdAndSavesToDb()
