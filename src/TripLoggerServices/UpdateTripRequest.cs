@@ -48,7 +48,6 @@ namespace TripLoggerServices
                 tripEntry.TripFrom = putRequest.TripFrom;
                 tripEntry.TripTo = putRequest.TripTo;
                 tripEntry.Description = putRequest.Description;
-                tripEntry.CreatedOn = DateTime.UtcNow;
                 tripEntry.ModifiedOn = DateTime.UtcNow;
 
                 // return results
