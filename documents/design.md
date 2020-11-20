@@ -36,7 +36,46 @@ The request data is saved in the `TripLog` Cosmos DB in the `Trips` collection u
     "distance": {
         "length": 5.6,
         "units": "Miles"
-    }
+    },
+    "createdOn": "2020-01-02T10:00:00",
+    "modifiedOn": "2020-01-02T10:00:00"
+}
+```
+
+#### UpdateTripRequest PUT
+This function supports updating existing trip entries. Requests are made via `PUT` requests to the `/trips/{tripId}` endpoint.
+
+The `tripId` on the url points to the id of the trip entry in Cosmos DB.
+
+A `JSON` body is expected with the `PUT` of the form.
+```JSON
+{
+    "date": "2020-01-02",
+	"tripFrom": "Home",
+	"tripTo": "SW",
+	"description": "Bike Commute",
+	"Distance": {
+		"length": 5.6,
+		"units": "Miles"
+	}
+}
+```
+
+The request data is saved in the `TripLog` Cosmos DB in the `Trips` collection using the `TripEntry` DTO. The initially saved data is of the form:
+
+```JSON
+{
+    "id": "103ca302-1d5c-462a-949e-6727203cbf04",
+    "date": "2020-01-02T00:00:00",
+    "tripFrom": "Home",
+    "tripTo": "SW",
+    "description": "Bike Commute",
+    "distance": {
+        "length": 5.6,
+        "units": "Miles"
+    },
+    "createdOn": "2020-01-02T10:00:00",
+    "modifiedOn": "2020-01-02T11:00:00"
 }
 ```
 

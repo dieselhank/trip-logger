@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"date\": \"2020-01-02\",\n\t\"tripFrom\": \"Home\",\n\t\"tripTo\": \"SW\",\n\t\"description\": \"Bike Commute\",\n\t\"Distance\": {\n\t\t\"length\": 5.6,\n\t\t\"units\": \"Miles\"\n\t}\n}",
+					"raw": "{\n\t\"date\": \"2020-01-02\",\n\t\"tripFrom\": \"Home\",\n\t\"tripTo\": \"SW\",\n\t\"description\": \"Bike Commute\",\n\t\"distance\": {\n\t\t\"length\": 5.6,\n\t\t\"units\": \"Miles\"\n\t}\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -35,6 +35,42 @@
 					"port": "7071",
 					"path": [
 						"trips"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "trips put",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"date\": \"2020-06-01\",\n\t\"tripFrom\": \"Home\",\n\t\"tripTo\": \"Around\",\n\t\"description\": \"Rec Ride\",\n\t\"distance\": {\n\t\t\"length\": 26.45,\n\t\t\"units\": \"Miles\"\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7071/trips/cf4175a4-b754-4fc5-9718-0d8ef9f34a86",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"trips",
+						"cf4175a4-b754-4fc5-9718-0d8ef9f34a86"
 					]
 				}
 			},

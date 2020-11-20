@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace TripLoggerServices.Models
 {
@@ -18,5 +16,9 @@ namespace TripLoggerServices.Models
         public string Description { get; set; }
         [Newtonsoft.Json.JsonProperty(PropertyName = "distance")]
         public DistanceDetail Distance { get; set; }
+        [Newtonsoft.Json.JsonProperty(PropertyName = "createdOn")]
+        public DateTime CreatedOn { get; set; }
+        [Newtonsoft.Json.JsonProperty(PropertyName = "modifiedOn")]
+        public DateTime ModifiedOn { get; set; }
     }
 }

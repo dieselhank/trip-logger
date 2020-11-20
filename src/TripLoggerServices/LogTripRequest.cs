@@ -6,7 +6,6 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.IO;
-using System.Threading.Tasks;
 using TripLoggerServices.Models;
 
 namespace TripLoggerServices
@@ -27,7 +26,7 @@ namespace TripLoggerServices
 
             try
             {
-                log.LogInformation("Processing trip log entry request.");
+                log.LogInformation("Processing trip log entry create request.");
 
                 // get raw request body
                 var requestBody = new StreamReader(req.Body).ReadToEnd();
@@ -50,6 +49,8 @@ namespace TripLoggerServices
                     TripFrom = postRequest.TripFrom,
                     TripTo = postRequest.TripTo,
                     Description = postRequest.Description,
+                    CreatedOn = DateTime.UtcNow,
+                    ModifiedOn = DateTime.UtcNow,
                 };
 
                 // return results
