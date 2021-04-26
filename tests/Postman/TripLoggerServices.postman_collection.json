@@ -75,6 +75,32 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "trip get",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:7071/trips/cf4175a4-b754-4fc5-9718-0d8ef9f34a86",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"trips",
+						"cf4175a4-b754-4fc5-9718-0d8ef9f34a86"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
