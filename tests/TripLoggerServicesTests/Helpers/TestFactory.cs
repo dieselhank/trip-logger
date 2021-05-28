@@ -14,15 +14,18 @@ namespace TripLoggerServicesTests.Helpers
     /// </summary>
     public class TestFactory
     {
-        public static DefaultHttpRequest CreateHttpRequest(string body)
+        public static DefaultHttpRequest CreateHttpRequest(string body = null)
         {
-            var byteArray = Encoding.UTF8.GetBytes(body);
-            var stream = new MemoryStream(byteArray);
+            var request = new DefaultHttpRequest(new DefaultHttpContext());
 
-            var request = new DefaultHttpRequest(new DefaultHttpContext())
+            if(body != null)
             {
-                Body = stream
-            };
+                var byteArray = Encoding.UTF8.GetBytes(body);
+                var stream = new MemoryStream(byteArray);
+
+                request.Body = stream;
+            }
+
             return request;
         }
 

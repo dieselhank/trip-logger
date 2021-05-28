@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B8F098A2-49F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{4B8AA974-F51F-42EE-9ADD-679284745E0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TripLoggerServicesTests", "tests\TripLoggerServicesTests\TripLoggerServicesTests.csproj", "{D4234B36-F8E3-472D-A464-1330F4DF0618}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripLoggerServicesTests", "tests\TripLoggerServicesTests\TripLoggerServicesTests.csproj", "{D4234B36-F8E3-472D-A464-1330F4DF0618}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
